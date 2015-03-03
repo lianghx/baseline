@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-lazy-init="true">
+
+	<context:property-placeholder
+		location="classpath:/drizzt/sf/context/baseline/config.properties" />
+
+	<import resource="classpath:/drizzt/sf/context/c3p0DataSource.xml" />
+	<import resource="classpath:/drizzt/sf/context/nativeJdbcExtractor.xml" />
+	<import resource="classpath:/drizzt/sf/context/lobHandler.xml" />
+	<import resource="classpath:/drizzt/sf/context/hibernate.xml" />
+	<import resource="classpath:/drizzt/sf/context/transactionManager.xml" />
+	
+	<alias name="${alias.dataSource}" alias="dataSource" />
+	<alias name="${alias.nativeJdbcExtractor}" alias="nativeJdbcExtractor" />
+	<alias name="${alias.lobHandler}" alias="lobHandler" />
+	
+	<import resource="classpath:/drizzt/sf/context/baseline/dao.xml" />
+	<import resource="classpath:/drizzt/sf/context/baseline/service.xml" />
+</beans>

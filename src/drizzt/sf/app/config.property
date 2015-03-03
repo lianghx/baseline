@@ -1,0 +1,8 @@
+basePath:D:/upload
+
+jndiName:jndi
+
+forName:com.mysql.jdbc.Driver
+url:jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=UTF-8
+user:root
+psw:1
